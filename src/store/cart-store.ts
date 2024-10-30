@@ -15,7 +15,7 @@ interface CartState {
 const loadCartFromStorage = (): CartProduct[] => {
   if (typeof window === "undefined") return []; // Ensure we are in a browser environment
   const storedCart = localStorage.getItem("cart");
-  return storedCart ? (JSON.parse(storedCart) as CartProduct[]): [];
+  return storedCart ? (JSON.parse(storedCart) as CartProduct[]) : [];
 };
 
 const saveCartToStorage = (cart: CartProduct[]) => {

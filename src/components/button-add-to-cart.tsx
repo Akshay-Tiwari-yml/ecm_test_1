@@ -7,14 +7,14 @@ import React, { useEffect, useState } from "react";
 import ButtonDecreaseQuantity from "./button-decrease-quantity";
 import ButtonIncreaseQuantity from "./button-increase-quantity";
 
-interface AddToCartButtonProps { // extending existing product interface
+// extending existing product interface
+interface AddToCartButtonProps {
   product: Product;
 }
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
   const cart = useCartStore((state) => state.cart);
   const addToCart = useCartStore((state) => state.addToCart);
-  const updateQuantity = useCartStore((state) => state.updateQuantity);
 
   const [isLoading, setIsLoading] = useState(true);
   // temp logic to have a different layout at server and client to prevent errors.
@@ -31,13 +31,13 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
   }
   // the above logic is to prevent hydration error
 
-  const handleAddToCart = ( 
+  const handleAddToCart = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ): void => {
     event.preventDefault();
     addToCart(product);
   };
-// alert("first " + JSON.stringify(cart));
+
   const currentProduct = cart.find((item) => item.id === product?.id);
 
   return (

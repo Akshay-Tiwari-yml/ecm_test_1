@@ -1,4 +1,3 @@
-// app/products/[id]/page.tsx
 import React from "react";
 import Image from "next/image";
 import AddToCartButton from "@/components/button-add-to-cart";
@@ -8,7 +7,9 @@ import { Product } from "@/app/interfaces/products-i";
 // this page lists out the detail of a single poduct of user's choosing.
 
 const ProductDetailPage = async ({ params }: { params: { id: string } }) => {
-  const product: Product[] = await fetchProductsById(parseInt(params.id)); // Fetch the specific product
+  const product: Product[] = await fetchProductsById(
+    Number.parseInt(params.id),
+  ); // Fetch the specific product
   return (
     <div className="flex min-h-screen flex-col p-4">
       <h1 className="text-3xl font-bold">{product[0]?.title}</h1>

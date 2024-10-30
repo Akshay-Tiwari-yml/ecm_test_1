@@ -1,7 +1,5 @@
 "use client";
 import AddToCartButton from "@/components/button-add-to-cart";
-import ButtonDecreaseQuantity from "@/components/button-decrease-quantity";
-import ButtonIncreaseQuantity from "@/components/button-increase-quantity";
 import ButtonRemoveFromCart from "@/components/button-remove-from-cart";
 import { useCartStore } from "@/store/cart-store";
 import React, { useEffect, useState } from "react";

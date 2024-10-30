@@ -4,7 +4,7 @@ import ProductCard from "@/components/product-card";
 import { fetchProducts } from "../api/product-list-api";
 import Link from "next/link";
 
-// this page lists out all the products. 
+// this page lists out all the products.
 // todo: implement pagination here.
 const Page = async () => {
   const products = await fetchProducts();

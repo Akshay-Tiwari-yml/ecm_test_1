@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Theme } from "@radix-ui/themes";
 
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
